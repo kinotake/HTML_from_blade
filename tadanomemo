@@ -1,0 +1,19 @@
+# ちょっとややこいですが、endの表記が出てきた時点で、一番近い行の条件式を探して、pairsでセットにしています。
+    lines = [1, 3, 5, 7, 8, 9]
+    starts = {1, 3, 8}
+
+    stack = []
+    pairs = []
+
+    for l in lines:
+        if l in starts:
+            stack.append(l)
+        else:
+            if stack:
+                start = stack.pop()
+                pairs.append((start, l))
+
+# [(3, 5), (1, 7), (8, 9)]
+
+
+ネスト構文の呼び出しの順番が難しかった...
